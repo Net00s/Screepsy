@@ -1,20 +1,21 @@
 var roleHarvester = require('harvester');
-var roleBuilder = require('builder');
+var roleUpgrader = require('upgrader');
+var spawn = Game.spawns["Spawn1"]
 
 module.exports.loop = function () {
 
 var harvesters = Object.keys(Game.creeps).filter(name => name.includes("Harvester"))
 var upgraders = Object.keys(Game.creeps).filter(name => name.includes("Upgrader"))
 
-var spawn = Game.spawns["Spawn1"]
+
 
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
-        if(creep.name.contains("harvester")) {
+        if(creep.name.includes("Harvester")) {
             roleHarvester.run(creep);
         }
-        if(creep.name.contains("Upgrader")) {
-            roleBuilder.run(creep);
+        if(creep.name.includes("Upgrader")) {
+            roleUpgrader.run(creep);
         }
     }
 
@@ -27,6 +28,8 @@ var spawn = Game.spawns["Spawn1"]
         createCreep([WORK, CARRY, MOVE], `Harvester_${harvesters.length}`)
     }
 
+
+    
 }
 
 function createCreep(parts, name){

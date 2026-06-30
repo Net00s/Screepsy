@@ -1,4 +1,4 @@
-var roleHarvester = {
+var roleUpgrader = {
 
     /** @param {Creep} creep **/
     run: function(creep) {
@@ -6,9 +6,9 @@ var roleHarvester = {
         var sources = creep.room.find(FIND_SOURCES)
         var RoomController = creep.room.controller
 
-        let target = creep.name.split("_")[1] % sources.length
+        let target = sources[creep.name.split("_")[1] % sources.length]
 
-        if(creep.store.getUsedCapacity() == 0){
+        if(creep.store.getFreeCapacity() > 0){
             if(creep.harvest(target) == ERR_NOT_IN_RANGE){
                 creep.moveTo(target)
             }
@@ -21,4 +21,4 @@ var roleHarvester = {
     }
 }
 
-module.exports = roleHarvester;
+module.exports = roleUpgrader;
