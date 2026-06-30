@@ -1,0 +1,18 @@
+in no particular order:
+
+1. Repair decaying roads
+    should the builder do it, or a seperate "repairer"?
+
+2. scaling
+    build creeps with more bodyparts as more extensions are built
+
+3. defences
+    walls + turrets
+
+4. automatic construction sites
+    roads on creep work routes
+    extensions in an accesable area
+
+5. capturing more rooms
+    empty rooms
+    occupied rooms by force
