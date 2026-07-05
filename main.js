@@ -73,7 +73,7 @@ var speedyHarvesters = Object.keys(Game.creeps).filter(name => name.includes("Sp
         createCreep(bodyParts, `Harvester_${itteration}`)
     }
 
-    if(speedyHarvesters.length < 2){
+    if(speedyHarvesters.length < 1){
         createCreep([WORK, CARRY, MOVE, MOVE], `speedyHarvester_${itteration}`)
     }
 
