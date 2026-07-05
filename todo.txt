@@ -8,7 +8,7 @@ in YES particular order:
     walls + turrets
 
 69.
-    have dying creep renew at spawn if theyre quite large
+    have dying creep renew at spawn, harvesters could do this when delivering
 
 
 // above are needed for live server launch
