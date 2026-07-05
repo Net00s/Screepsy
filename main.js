@@ -6,6 +6,7 @@ var spawn = Game.spawns["Spawn1"]
 var bodyParts = [WORK, CARRY, MOVE]
 
 var itteration = 0
+let SpawnFlag = true
 
 module.exports.loop = function () {
 
@@ -46,7 +47,7 @@ var builders = Object.keys(Game.creeps).filter(name => name.includes("Builder"))
 
     //when multible spawnCreep functions are run in the same tick, the last one is used. Harvesters have higher priority than upgraders
 
-    let SpawnFlag = true
+
     if (spawn.spawning == null && !SpawnFlag) {SpawnFlag = true}
     if (spawn.spawning != null && SpawnFlag) {itteration += 1; SpawnFlag = false}
 
