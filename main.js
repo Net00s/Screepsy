@@ -14,6 +14,8 @@ var harvesters = Object.keys(Game.creeps).filter(name => name.includes("Harveste
 var upgraders = Object.keys(Game.creeps).filter(name => name.includes("Upgrader"))
 var builders = Object.keys(Game.creeps).filter(name => name.includes("Builder"))
 
+var speedyHarvesters = Object.keys(Game.creeps).filter(name => name.includes("SpeedyHarvester"))
+
 
 
     if (spawn.room.find(FIND_MY_STRUCTURES,
@@ -49,19 +51,30 @@ var builders = Object.keys(Game.creeps).filter(name => name.includes("Builder"))
 
 
 
-    if (spawn.spawning != null && SpawnFlag) {itteration += 1; SpawnFlag = false}
-    if (spawn.spawning == null && !SpawnFlag) {SpawnFlag = true}
+    if (spawn.spawning != null && SpawnFlag)
+        {
+            itteration += 1
+            SpawnFlag = false
+        }
+    if (spawn.spawning == null && !SpawnFlag) 
+        {
+            SpawnFlag = true
+        }
 
     if(builders.length < 4){
         createCreep(bodyParts, `Builder_${itteration}`)
     }
 
-    if(upgraders.length < 4){
+    if(upgraders.length < 3){
         createCreep(bodyParts, `Upgrader_${itteration}`)
     }
 
-    if(harvesters.length < 4){
+    if(harvesters.length < 5){
         createCreep(bodyParts, `Harvester_${itteration}`)
+    }
+
+    if(speedyHarvesters.length < 2){
+        createCreep([WORK, CARRY, MOVE, MOVE], `speedyHarvester_${itteration}`)
     }
 
 
