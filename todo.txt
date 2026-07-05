@@ -7,6 +7,9 @@ in YES particular order:
 3. defences
     walls + turrets
 
+69.
+    have dying creep renew at spawn if theyre quite large
+
 
 // above are needed for live server launch
 
