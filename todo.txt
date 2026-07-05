@@ -16,3 +16,11 @@ in YES particular order:
 
 1. Repair decaying roads
     should the builder do it, or a seperate "repairer"?
+
+
+
+// BUGS:
+
+Harvesters target the spawn even when its full of energy
+
+Harvesters that fully fill an extension/spawn and have energy left afterwards go mining like theyre empty
