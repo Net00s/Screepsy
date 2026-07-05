@@ -5,7 +5,7 @@ var roleBuilder = require('Builder')
 var spawn = Game.spawns["Spawn1"]
 var bodyParts = [WORK, CARRY, MOVE] 
 
-var itteration = 1
+var itteration = Object.keys(Game.creeps)
 let SpawnFlag = true
 
 module.exports.loop = function () {
@@ -14,14 +14,14 @@ var harvesters = Object.keys(Game.creeps).filter(name => name.includes("Harveste
 var upgraders = Object.keys(Game.creeps).filter(name => name.includes("Upgrader"))
 var builders = Object.keys(Game.creeps).filter(name => name.includes("Builder"))
 
-var speedyHarvesters = Object.keys(Game.creeps).filter(name => name.includes("SpeedyHarvester"))
+var speedyHarvesters = Object.keys(Game.creeps).filter(name => name.includes("speedyHarvester"))
 
 
 
     if (spawn.room.find(FIND_MY_STRUCTURES,
                         {filter: s =>
                             s.structureType === STRUCTURE_EXTENSION
-                        }).length > bodyParts.length - 3){
+                        }).length > (bodyParts.length - 3)*2){
             if(bodyParts[bodyParts.length-1] == WORK){
                 bodyParts.push(MOVE)
             }

@@ -7,7 +7,7 @@ in YES particular order:
 3. defences
     walls + turrets
 
-69.
+69. renewal
     have dying creep renew at spawn, harvesters could do this when delivering
 
 
@@ -19,6 +19,8 @@ in YES particular order:
 
 1. Repair decaying roads
     should the builder do it, or a seperate "repairer"?
+
+420. Make the scaling smarter
 
 
 
