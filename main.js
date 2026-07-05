@@ -5,11 +5,14 @@ var roleBuilder = require('Builder')
 var spawn = Game.spawns["Spawn1"]
 var bodyParts = [WORK, CARRY, MOVE]
 
+var itteration = 0
+
 module.exports.loop = function () {
 
 var harvesters = Object.keys(Game.creeps).filter(name => name.includes("Harvester"))
 var upgraders = Object.keys(Game.creeps).filter(name => name.includes("Upgrader"))
 var builders = Object.keys(Game.creeps).filter(name => name.includes("Builder"))
+
 
 
     if (spawn.room.find(FIND_MY_STRUCTURES,
@@ -43,17 +46,21 @@ var builders = Object.keys(Game.creeps).filter(name => name.includes("Builder"))
 
     //when multible spawnCreep functions are run in the same tick, the last one is used. Harvesters have higher priority than upgraders
 
+    let SpawnFlag = true
+    if (spawn.spawning == null && !SpawnFlag) {SpawnFlag = true}
+    if (spawn.spawning != null && SpawnFlag) {itteration += 1; SpawnFlag = false}
+
 
     if(builders.length < 4){
-        createCreep(bodyParts, `Builder_${Game.time}`)
+        createCreep(bodyParts, `Builder_${itteration}`)
     }
 
     if(upgraders.length < 4){
-        createCreep(bodyParts, `Upgrader_${Game.time}`)
+        createCreep(bodyParts, `Upgrader_${itteration}`)
     }
 
     if(harvesters.length < 4){
-        createCreep(bodyParts, `Harvester_${Game.time}`)
+        createCreep(bodyParts, `Harvester_${itteration}`)
     }
 
 
