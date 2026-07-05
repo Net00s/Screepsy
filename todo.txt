@@ -1,18 +1,22 @@
-in no particular order:
-
-1. Repair decaying roads
-    should the builder do it, or a seperate "repairer"?
-
-2. scaling (DONE)
-    build creeps with more bodyparts as more extensions are built
-
-3. defences
-    walls + turrets
+in YES particular order:
 
 4. automatic construction sites
     roads on creep work routes
     extensions in an accesable area
 
+3. defences
+    walls + turrets
+
+
+// above are needed for live server launch
+
+2. scaling (DONE)
+    build creeps with more bodyparts as more extensions are built
+
+
 5. capturing more rooms
     empty rooms
     occupied rooms by force
+
+1. Repair decaying roads
+    should the builder do it, or a seperate "repairer"?
