@@ -10,10 +10,6 @@ in YES particular order:
 
 // above are needed for live server launch
 
-2. scaling (DONE)
-    build creeps with more bodyparts as more extensions are built
-
-
 5. capturing more rooms
     empty rooms
     occupied rooms by force

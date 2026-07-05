@@ -3,7 +3,7 @@ var roleUpgrader = require('upgrader');
 var roleBuilder = require('Builder')
 
 var spawn = Game.spawns["Spawn1"]
-var bodyParts = [WORK, CARRY, MOVE]
+var bodyParts = [WORK, CARRY, MOVE] 
 
 var itteration = 0
 let SpawnFlag = true
