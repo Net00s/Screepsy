@@ -17,15 +17,15 @@ var builders = Object.keys(Game.creeps).filter(name => name.includes("Builder"))
                             s.structureType === STRUCTURE_EXTENSION
                         }).length > bodyParts.length - 3){
             if(bodyParts[bodyParts.length-1] == WORK){
-                bodyParts.push(CARRY)
-            }
-            else if (bodyParts[bodyParts.length-1] == CARRY){
                 bodyParts.push(MOVE)
             }
-            else{
+            else if (bodyParts[bodyParts.length-1] == CARRY){
                 bodyParts.push(WORK)
             }
-        }
+            else{
+                bodyParts.push(CARRY)
+            }
+        } // update bodyparts list based on number of extensions !!!!!!!!
 
 
     for(var name in Game.creeps) {
