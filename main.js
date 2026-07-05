@@ -21,7 +21,7 @@ var speedyHarvesters = Object.keys(Game.creeps).filter(name => name.includes("Sp
     if (spawn.room.find(FIND_MY_STRUCTURES,
                         {filter: s =>
                             s.structureType === STRUCTURE_EXTENSION
-                        }).length > bodyParts.length - 3){
+                        }).length > (bodyParts.length - 3)*2){
             if(bodyParts[bodyParts.length-1] == WORK){
                 bodyParts.push(MOVE)
             }
