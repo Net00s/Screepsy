@@ -3,7 +3,7 @@ in no particular order:
 1. Repair decaying roads
     should the builder do it, or a seperate "repairer"?
 
-2. scaling
+2. scaling (DONE)
     build creeps with more bodyparts as more extensions are built
 
 3. defences
