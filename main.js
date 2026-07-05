@@ -14,7 +14,7 @@ var harvesters = Object.keys(Game.creeps).filter(name => name.includes("Harveste
 var upgraders = Object.keys(Game.creeps).filter(name => name.includes("Upgrader"))
 var builders = Object.keys(Game.creeps).filter(name => name.includes("Builder"))
 
-var speedyHarvesters = Object.keys(Game.creeps).filter(name => name.includes("SpeedyHarvester"))
+var speedyHarvesters = Object.keys(Game.creeps).filter(name => name.includes("speedyHarvester"))
 
 
 
