@@ -10,7 +10,7 @@ var roleHarvester = {
                         {filter: s =>
                             s.structureType === STRUCTURE_EXTENSION &&
                             s.store.getFreeCapacity(RESOURCE_ENERGY) > 0
-                        })] // make a giant list of the spawn + all extensions that aren't full
+                        })] // make a giant list of the spawn + all extensions that aren't full (fucckk)
         
 
         let transferTarget = transferTargets[creep.name.split("_")[1] % transferTargets.length] // chosen one at random based on ID
