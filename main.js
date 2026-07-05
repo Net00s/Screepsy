@@ -1,13 +1,31 @@
 var roleHarvester = require('harvester');
 var roleUpgrader = require('upgrader');
 var roleBuilder = require('Builder')
+
 var spawn = Game.spawns["Spawn1"]
+var bodyParts = [WORK, CARRY, MOVE]
 
 module.exports.loop = function () {
 
 var harvesters = Object.keys(Game.creeps).filter(name => name.includes("Harvester"))
 var upgraders = Object.keys(Game.creeps).filter(name => name.includes("Upgrader"))
 var builders = Object.keys(Game.creeps).filter(name => name.includes("Builder"))
+
+
+    if (spawn.room.find(FIND_MY_STRUCTURES,
+                        {filter: s =>
+                            s.structureType === STRUCTURE_EXTENSION
+                        }).length > bodyParts.length - 3){
+            if(bodyParts[bodyParts.length-1] == WORK){
+                bodyParts.push(CARRY)
+            }
+            else if (bodyParts[bodyParts.length-1] == CARRY){
+                bodyParts.push(MOVE)
+            }
+            else{
+                bodyParts.push(WORK)
+            }
+        }
 
 
     for(var name in Game.creeps) {
@@ -25,20 +43,17 @@ var builders = Object.keys(Game.creeps).filter(name => name.includes("Builder"))
 
     //when multible spawnCreep functions are run in the same tick, the last one is used. Harvesters have higher priority than upgraders
 
-    if(spawn.room.energyAvailable == spawn.room.energyCapacityAvailable){
-        createCreep([WORK, CARRY, CARRY, MOVE, MOVE], `SUPERHarvester_${harvesters.length + 666}`)
+
+    if(builders.length < 4){
+        createCreep(bodyParts, `Builder_${Game.time}`)
     }
 
-    if(builders.length < 2){
-        createCreep([WORK, CARRY, MOVE], `Builder_${builders.length}`)
-    }
-
-    if(upgraders.length < 1){
-        createCreep([WORK, CARRY, MOVE], `Upgrader_${upgraders.length}`)
+    if(upgraders.length < 4){
+        createCreep(bodyParts, `Upgrader_${Game.time}`)
     }
 
     if(harvesters.length < 4){
-        createCreep([WORK, CARRY, MOVE], `Harvester_${harvesters.length}`)
+        createCreep(bodyParts, `Harvester_${Game.time}`)
     }
 
 
