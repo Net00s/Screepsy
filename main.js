@@ -5,7 +5,7 @@ var roleBuilder = require('Builder')
 var spawn = Game.spawns["Spawn1"]
 var bodyParts = [WORK, CARRY, MOVE] 
 
-var itteration = Object.keys(Game.creeps)
+var itteration = Object.keys(Game.creeps).length
 let SpawnFlag = true
 
 module.exports.loop = function () {
